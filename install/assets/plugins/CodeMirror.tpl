@@ -28,7 +28,9 @@
  *
  */
 
-// relative path to CodeMirror path from /manager
-$_CM_URL = '/assets/plugins/codemirror/';
+$_CM_BASE = 'assets/plugins/codemirror/';
 
-require('..'. $_CM_URL .'codemirror.plugin.php');
+$_CM_URL = $modx->config['site_url'] . $_CM_BASE;
+
+require(MODX_BASE_PATH. $_CM_BASE .'codemirror.plugin.php');
+

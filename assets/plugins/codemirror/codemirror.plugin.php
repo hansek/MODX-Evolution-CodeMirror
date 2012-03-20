@@ -78,7 +78,9 @@ if (('none' == $rte) && $mode) {
     $output = '';
 
     if ($theme != 'default') {
-        $output .= '<link rel="stylesheet" href="{$_CM_URL}cm/theme/{$theme}.css">';
+        $output .= <<< HEREDOC
+        <link rel="stylesheet" href="{$_CM_URL}cm/theme/{$theme}.css">
+HEREDOC;
     }
 
     $output .= <<< HEREDOC
@@ -161,13 +163,15 @@ if (('none' == $rte) && $mode) {
         var myTextArea = document.getElementsByName('$textarea_name')[0];
         var myCodeMirror = CodeMirror.fromTextArea(myTextArea, config);
 
-        var tv_textareas = document.getElementById('tv_body').getElementsByTagName('textarea');
+        if (document.getElementById('tv_body') !== null) {
+            var tv_textareas = document.getElementById('tv_body').getElementsByTagName('textarea');
 
-        if (tv_textareas) {
-            for (var i = 0; i < tv_textareas.length; i++) {
-                var ta = tv_textareas[i];
+            if (tv_textareas) {
+                for (var i = 0; i < tv_textareas.length; i++) {
+                    var ta = tv_textareas[i];
 
-                CodeMirror.fromTextArea(document.getElementById(ta.id), config);
+                    CodeMirror.fromTextArea(document.getElementById(ta.id), config);
+                }
             }
         }
 
