@@ -3,11 +3,11 @@
  * @name        CodeMirror
  * @description JavaScript library that can be used to create a relatively pleasant editor interface
  *
- * @released    Apr 15, 2012
- * @CodeMirror  2.23 b
+ * @released    Jul 5, 2012
+ * @CodeMirror  2.25
  *
  * @required    MODx 0.9.6.3+
- *              CodeMirror  2.23 : pl
+ *              CodeMirror  2.25 : pl
  *
  * @confirmed   MODx Evolution 1.0.6
  *
@@ -32,6 +32,7 @@ $mode = 'htmlmixed';
 $theme                  = (isset($theme)                    ? $theme                    : 'default');
 $indentUnit             = (isset($indentUnit)               ? $indentUnit               : 4);
 $tabSize                = (isset($tabSize)                  ? $tabSize                  : 4);
+$lineWrapping           = (isset($lineWrapping)             ? $lineWrapping             : false);
 
 /*
  * This plugin is only valid in "text" mode. So check for the current Editor
@@ -158,6 +159,7 @@ HEREDOC;
             lineNumbers: true,
             matchBrackets: true,
             onKeyEvent: myEventHandler,
+            lineWrapping: '{$lineWrapping}',
             // onCursorActivity: positionHolder
         };
 

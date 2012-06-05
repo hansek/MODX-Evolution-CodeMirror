@@ -11,6 +11,13 @@ Repository is using Git Submodules. After cloning of repository stay in root and
     git submodule update
 
 ## Changes ##
+2.25 (2012-06-05)
+- updated CodeMirror JS core to 2.25
+- added CodeMirror themes to settings
+- added new CodeMirror settings (thy dmit3yy)
+- improvment in path definition (thx yama)
+
+
 2.23 b (2012-04-15)
 
 - fixed bug with rendering of CM on document Content
