@@ -18,6 +18,8 @@
 
 global $content;
 
+$_CM_BASE = "assets/plugins/{$_CM_DIR}";
+$_CM_URL = $modx->config['site_url'] . $_CM_BASE;
 $textarea_name = 'post';
 $object_name  = $content['name'];
 $obect_type  = substr($evt->name, 2, 1);
